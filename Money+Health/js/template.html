@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uni DB</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $(function() {
+      $.get("/lecturers", function(data) {
+        let lecturers = JSON.parse(data);
+
+        for (i=0; i<lecturers.length; i++) {
+          let lec = "<li>" + lecturers[i].name + " (" + lecturers[i].age + " years old)</li>";
+          $("#lecturers").append(lec);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Uni DB</h1>
+  <ul id="lecturers"></ul>
+</body>
+</html>
