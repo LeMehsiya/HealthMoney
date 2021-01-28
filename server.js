@@ -28,6 +28,7 @@ const io = socketio(server);
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
+
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -305,7 +306,7 @@ app.get('/chart',(req,res)=>{
      Money.find({owner: req.user._id}).populate("owner", "_id money date").exec((err,moneyFound)=>{
        Cal.find({owner: req.user._id}).populate("owner", "_id cal date").exec((err,foundCal)=>{
    
-     //create two arraies for save the data
+     //create two arrays for save the data
     const arr=[];
     const date=[];
         //make for loop to loop the object of model
@@ -313,7 +314,7 @@ app.get('/chart',(req,res)=>{
       arr.push(moneyFound[i].money);
       date.push(moneyFound[i].date.toString().substring(4,15));
     }
-      //create two arraies for save the data
+      //create two arrays for save the data
     const calarr=[];
     const calldate=[];
     //make for loop to loop the object of model
