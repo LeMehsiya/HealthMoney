@@ -22,7 +22,6 @@
     "express-session": "^1.17.1",
     "express-validator": "^5.3.1",
     "fs": "0.0.1-security",
-    "mocha": "^8.2.1",
     "moment": "^2.24.0",
     "mongoose": "^5.11.10",
     "nodemon": "^2.0.7",
@@ -33,6 +32,9 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
     "nodemon": "^2.0.2"
   },
   "directories": {
